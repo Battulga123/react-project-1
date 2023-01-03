@@ -1,7 +1,7 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
+
 import Product from './Product'
 import Product2 from './Product2';
 import ProductFunc from './ProductFunc';
