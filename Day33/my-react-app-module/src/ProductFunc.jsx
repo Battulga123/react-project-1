@@ -1,6 +1,12 @@
 
 
 function ProductFunc(props) {
+
+    function handleUpVote (props){
+        console.log('upvoted')
+        console.log(props.id)
+    }
+
     return (
         <div className='item'>
             <div className="image thumbnail rounded">
@@ -9,7 +15,10 @@ function ProductFunc(props) {
             <div className="description-container">
                 <div className="description">
                     <div className="rank">
+
+                        <a onClick={ ()=>{handleUpVote(props)}}> 
                         <i class="bi bi-caret-up-fill"></i>
+                        </a>
                         <p>{props.votes}</p>
                     </div>
                     <p>{props.title}</p>
