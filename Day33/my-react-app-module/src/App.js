@@ -1,7 +1,5 @@
 
 import './App.css';
-// import Product from './Product'
-// import Product2 from './Product2';
 import ProductFunc from './ProductFunc';
 import products from './Seeds';
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -29,9 +27,7 @@ function App() {
           <h3>Popular Products</h3>
           <hr />
           {productList}
-          
         </div>
-
       </header>
     </div>
   )};
