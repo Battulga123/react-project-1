@@ -1,7 +1,7 @@
 
 import './App.css';
-import Product from './Product'
-import Product2 from './Product2';
+// import Product from './Product'
+// import Product2 from './Product2';
 import ProductFunc from './ProductFunc';
 import products from './Seeds';
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -18,6 +18,7 @@ function App() {
         votes = {product.votes}
         submitterAvatarUrl = {product.submitterAvatarUrl}
         productImageUrl = {product.productImageUrl}
+        stars = {product.stars}
          />
   })
 
