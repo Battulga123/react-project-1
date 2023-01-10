@@ -16,6 +16,7 @@ function App() {
         votes = {product.votes}
         submitterAvatarUrl = {product.submitterAvatarUrl}
         productImageUrl = {product.productImageUrl}
+        stars = {product.stars}
          />
   })
 
