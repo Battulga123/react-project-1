@@ -21,12 +21,7 @@ export default function ProductFunc(props) {
         // console.log(foundProduct[0].votes)
         setStars(stars + 1)
 
-        if(stars>5) {
-            setStars = 0
-        }
-
     }
-
 
     return (
         <div className='item'>
@@ -36,9 +31,9 @@ export default function ProductFunc(props) {
             <div className="description-container">
                 <div className="description">
                     <div className="rank">
-                        <a onClick={() => { handlerUpVote(props) }}>
+                        <a onClick={() => props.onVote(props.id)}>
                             <i class="bi bi-caret-up-fill"></i>
-                            <p>{votes}</p>
+                            <p>{props.votes}</p>
                         </a>
                     </div>
                     <p>{props.title}</p>
