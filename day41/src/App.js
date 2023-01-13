@@ -36,7 +36,7 @@ function App() {
           <input value={inputText} onChange={(e) => { handleInput(e) }}></input>
 
         </div>
-<br/>
+        <br/>
         <div>
           <UpdatingObjects />
         </div>
