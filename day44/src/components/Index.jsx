@@ -24,6 +24,8 @@ export default function (){
             <Link to={'home'} state={homePageData}>Home Page</Link>
             <Link to={'accordian'}>Accordian Page</Link>
             <Link to={'movies'}>Movies Pages</Link>
+            <Link to={'gallery'}>Image Gallery Page</Link>
+            <Link to={'toaster'}>ToasterPage</Link>
             </nav>
         </div>
     )
