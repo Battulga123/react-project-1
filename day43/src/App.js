@@ -20,7 +20,7 @@ function App() {
           <Link to={'/About'}>About</Link>
           <Link to={'/Login'}>Login</Link>
           <Link to={'/Register'}>Register</Link>
-          <Link to={'/FeedbackForm'}>Form</Link>
+          <Link to={'/FeedbackForm'}>Form</Link>  
         </div>
 
         <Routes>

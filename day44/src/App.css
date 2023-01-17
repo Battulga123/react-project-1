@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  background-color: bisque;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.accordian {
+  border: solid grey 1px;
+}
