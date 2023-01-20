@@ -7,17 +7,21 @@ import { useState } from "react";
 import Header from "./components/Header";
 
 function App() {
- const [wishlist, setWishlist] = useState([])
- 
- 
+  const [wishlist, setWishlist] = useState([]);
+
   return (
     <div>
-      <Header wishlist={wishlist} setWishlist={setWishlist}/>
+      <Header wishlist={wishlist} setWishlist={setWishlist} />
       <div className="main ui text container">
         <h1 className="ui dividing centered header">Popular Products</h1>
         <div id="content"></div>
         <Routes>
-          <Route path="/" element={<ProductList wishlist={wishlist} setWishlist={setWishlist}/>} />
+          <Route
+            path="/"
+            element={
+              <ProductList wishlist={wishlist} setWishlist={setWishlist} />
+            }
+          />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
         <Outlet />
@@ -27,7 +31,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
