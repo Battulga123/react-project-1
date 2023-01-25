@@ -1,6 +1,39 @@
-import { Card, Grid, CardContent, Button,TextField } from "@mui/material";
+import { Card, Grid, CardContent, Button, TextField } from "@mui/material";
+import { useState } from "react";
 
-export default function TimerForm({title, project}) {
+export default function TimerForm({
+  id,
+  title,
+  project,
+  onFormSubmit,
+  onFormClose,
+}) {
+
+  const [timer, setTimer] = useState({
+    title: title || "",
+    project: project || ""
+  })
+
+
+  const submitText = id ? "Update" : "Create";
+
+  function handleTitleChange (e) {
+    console.log(e.target.value)
+    setTimer ({
+      ...timer,
+      title: e.target.value
+    })
+  }
+
+  function handleProjectChange(e) {
+    console.log(e.target.value)
+    setTimer({
+      ...timer,
+      project: e.target.value
+    })
+  }
+
+
   return (
     <div>
       <h1>Timer Form</h1>
@@ -10,28 +43,32 @@ export default function TimerForm({title, project}) {
             <form>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <TextField 
-                  type='text' 
-                  placeholder={title}
-                  label={title}
-                  variant={'outlined'}
-                  fullWidth={true}
+                  <TextField
+                    type="text"
+                    placeholder={timer.title}
+                    label={"Title"}
+                    value={timer.title}
+                    variant={"outlined"}
+                    fullWidth={true}
+                    onChange={handleTitleChange}
                   ></TextField>
                 </Grid>
                 <Grid item xs={12}>
-                <TextField 
-                  type='text' 
-                  placeholder={project}
-                  label={project}
-                  variant={'outlined'}
-                  fullWidth={true}
-                ></TextField>
+                  <TextField
+                    type="text"
+                    placeholder={timer.project}
+                    label={"Project"}
+                    value={timer.project}
+                    variant={"outlined"}
+                    fullWidth={true}
+                    onChange={handleProjectChange}
+                  ></TextField>
                 </Grid>
                 <Grid item xs={12}>
-                  <Button color={"success"} variant={"outlined"}>
-                    Create
+                  <Button color={"success"} variant={"outlined"} onClick={onFormSubmit}>
+                    {submitText}
                   </Button>
-                  <Button color={"success"} variant={"outlined"}>
+                  <Button color={"success"} variant={"outlined"} onClick={onFormClose}>
                     Cancel
                   </Button>
                 </Grid>

@@ -1,17 +1,30 @@
 import Container from "@mui/material/Container";
-import { Card } from "@mui/material";
-import { Typography, Box } from "@mui/material";
+import Card from "@mui/material/Card";
+import { Box, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import TimerActionButton from "./TimerActionButton";
-import { useState } from "react";
 import { renderElapsedString } from "./Helpers";
 
-export default function Timer({ title, project, elapsed, runningSince }) {
-  const [timerIsRunning, setTimerIsRunning] = useState(false);
+export default function Timer({ id, title, project, elapsed, runningSince, onTrashClick, onStartClick, onStopClick,onEditClick }) {
   const timer = renderElapsedString(elapsed, runningSince);
-  const [runningTime, setRunningTime] = useState(0);
-  console.log(timer);
+  
+  
+  function handleDelete (){
+    onTrashClick(id)
+  }
+
+  function handleStartClick() {
+    onStartClick(id)
+  }
+
+  function handleStopClick (){
+    onStopClick(id)
+  }
+  function handleEditclick(){
+    onEditClick(id)
+  }
+
 
   return (
     <Container maxWidth="sm">
@@ -33,9 +46,7 @@ export default function Timer({ title, project, elapsed, runningSince }) {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
-          <h1>{runningTime}</h1>
-        </Box>
+        ></Box>
         <Box
           sx={{
             display: "flex",
@@ -50,20 +61,16 @@ export default function Timer({ title, project, elapsed, runningSince }) {
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "center",
-            marginBottom: 5,
+            marginBottom: 2,
           }}
         >
-          <DeleteIcon />
-          <ModeEditOutlineIcon />
+          <DeleteIcon  onClick={handleDelete}/>
+          <ModeEditIcon onClick={handleEditclick}/>
         </Box>
         <TimerActionButton
-          isTimerRunnig={timerIsRunning}
-          onStartClick={() => {
-            setTimerIsRunning(true);
-          }}
-          onStopClick={() => {
-            setTimerIsRunning(false);
-          }}
+          isTimerRunning={runningSince}
+          onStartClick={handleStartClick}
+          onStopClick={handleStopClick}
         />
       </Card>
     </Container>

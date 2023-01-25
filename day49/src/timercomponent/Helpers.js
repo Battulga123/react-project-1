@@ -1,3 +1,5 @@
+import { v4 as uuidv4} from 'uuid'
+
 function renderElapsedString(elapsed, runningSince) {
   let totalElapsed = elapsed;
   if (runningSince) {
@@ -9,7 +11,7 @@ function renderElapsedString(elapsed, runningSince) {
 function millisecondsToHuman(ms) {
   const seconds = Math.floor((ms / 1000) % 60);
   const minutes = Math.floor((ms / 1000 / 60) % 60);
-  const hours = Math.floor(ms / 1000 / 60 / 60);
+  const hours = Math.floor(ms / 1000 / 60 / 60) % 60;
 
   return [
     pad(hours.toString(), 2),
@@ -26,4 +28,16 @@ function pad(numberString, size) {
   return padded;
 }
 
-export { renderElapsedString };
+
+function newTimer(atts ={}) {
+  console.log(atts)
+  return {
+    title: atts.title || "Timer",
+    project: atts.project || "Project",
+    id : uuidv4(),
+    elapsed: 0
+  }
+}
+
+
+export { renderElapsedString, newTimer };

@@ -1,13 +1,13 @@
 import { Button } from "@mui/material";
 
 export default function TimerActionButton({
-  isTimerRunnig,
+  isTimerRunning,
   onStartClick,
   onStopClick,
 }) {
   return (
     <div>
-      {isTimerRunnig ? (
+      {isTimerRunning ? (
         <Button
           color={"error"}
           fullWidth={true}
