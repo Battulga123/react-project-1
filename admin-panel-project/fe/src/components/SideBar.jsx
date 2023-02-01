@@ -13,12 +13,21 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CategoryIcon from "@mui/icons-material/Category";
-import { Link } from "react-router-dom";
+// import { navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 export default function SideBar() {
-  
+  const navigate = useNavigate();
+
+  const handleUser = () => {
+    navigate("/users");
+  };
+
+  const handleProduct = () => {
+    navigate("/product");
+  };
 
   return (
     <div>
@@ -48,8 +57,8 @@ export default function SideBar() {
           <Toolbar />
           <Box sx={{ overflow: "auto" }}>
             <List>
-              <ListItem onClick={<Link to="/users"></Link>}>
-                <ListItemButton>
+              <ListItem>
+                <ListItemButton onClick={handleUser}>
                   <ListItemIcon>
                     <AccountCircleIcon />
                   </ListItemIcon>
@@ -58,22 +67,16 @@ export default function SideBar() {
               </ListItem>
               <Divider />
               <ListItem>
-                <ListItemButton>
+                <ListItemButton onClick={handleProduct}>
                   <ListItemIcon>
                     <CategoryIcon />
                   </ListItemIcon>
-                  <ListItemText>Products</ListItemText>
+                  <ListItemText>Product</ListItemText>
                 </ListItemButton>
               </ListItem>
             </List>
           </Box>
         </Drawer>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Toolbar />
-          <Typography>
-            
-          </Typography>
-        </Box>
       </Box>
     </div>
   );

@@ -110,8 +110,6 @@ function App() {
     });
   }
 
-
-
   return (
     <div className="App">
       <h1> Day52 - NodeJS FS Module</h1>

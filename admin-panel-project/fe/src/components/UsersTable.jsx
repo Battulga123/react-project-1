@@ -1,41 +1,18 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 
 const columns = [
   { field: "id", headerName: "ID" },
   { field: "firstName", headerName: "First name" },
   { field: "lastName", headerName: "Last name" },
-  {
-    field: "phoneNumber",
-    headerName: "Phone Number",
-    type: "number",
-  },
-  {
-    field: "email",
-    headerName: "E-Mail",
-    type: "email",
-  },
-  {
-    field: "role",
-    headerName: "Role",
-    type: "text",
-  },
-  {
-    field: "disabled",
-    headerName: "Disabled",
-    type: "text",
-  },
-  {
-    field: "avatar",
-    headerName: "Avatar",
-    type: "text",
-  },
-  {
-    field: "action",
-    headerName: "Action",
-  },
+  { field: "phoneNumber", headerName: "Phone Number", type: "number" },
+  { field: "email", headerName: "E-Mail", type: "email" },
+  { field: "role", headerName: "Role", type: "text" },
+  { field: "disabled", headerName: "Disabled", type: "text" },
+  { field: "avatar", headerName: "Avatar", type: "text" },
+  { field: "action", headerName: "Action" },
 ];
 
 const rows = [
@@ -47,7 +24,6 @@ const rows = [
     email: "Jon@gmail.com",
     role: "user",
     disabled: "Yes",
-    
   },
 ];
 
@@ -55,7 +31,7 @@ export default function DataTable() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <Typography>Users</Typography>
-      
+
       <Button variant="contained">New</Button>
       <DataGrid
         rows={rows}
