@@ -13,10 +13,21 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CategoryIcon from "@mui/icons-material/Category";
+import { navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 export default function Home() {
+  
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/users')
+  } 
+  
+  }
+
   return (
     <div>
       <Box sx={{ display: "flex" }}>
@@ -45,31 +56,31 @@ export default function Home() {
           <Toolbar />
           <Box sx={{ overflow: "auto" }}>
             <List>
-              <Typography paragraph>Users</Typography>
-              <Typography paragraph>Products</Typography>
-
-              {/* {["User", "Product"].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? (
-                        <AccountCircleIcon />
-                      ) : (
-                        <CategoryIcon />
-                      )}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              ))} */}
+              <ListItem >
+                <ListItemButton onClick={handleClick}>
+                  <ListItemIcon>
+                    <AccountCircleIcon />
+                  </ListItemIcon>
+                  <ListItemText>User</ListItemText>
+                </ListItemButton>
+              </ListItem>
+              <Divider />
+              <ListItem>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <CategoryIcon />
+                  </ListItemIcon>
+                  <ListItemText>Products</ListItemText>
+                </ListItemButton>
+              </ListItem>
             </List>
-            <Divider />
           </Box>
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar />
-          <Typography paragraph>text1</Typography>
-          <Typography paragraph>text2</Typography>
+          <Typography>
+            
+          </Typography>
         </Box>
       </Box>
     </div>
