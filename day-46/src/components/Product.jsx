@@ -21,9 +21,8 @@ export default function Product(props) {
 
   const product = foundProduct;
 
-  const liked = props.wishlist.filter(wish => wish.id === product.id) [0]
-
-
+  const liked = props.wishlist.filter((wish) => wish.id === product.id)[0];
+  
   return (
     <div className="item">
       <div className="image">

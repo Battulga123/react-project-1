@@ -12,7 +12,7 @@ export default function Register() {
         return <navigate to={'/login'}/>
     }
     
-    
+
     
     const handleSubmit = function (event) {
         event.preventDefault()

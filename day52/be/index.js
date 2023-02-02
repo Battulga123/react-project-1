@@ -7,6 +7,10 @@ const app = express();
 
 const PORT = 8080;
 
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
 app.use(cors());
 app.use(express.json());
 
@@ -65,8 +69,40 @@ app.post("/users", (request, response) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.put("/users", (request, response) => {
+  console.log(request.body);
+  fs.readFile("./data/users.json", "utf-8", (readError, readData) => {
+    if (readError) {
+      response.json({
+        status: "file read error",
+        data: [],
+      });
+    }
+    const savedData = JSON.parse(readData);
+    const changedData = savedData.map((d) => {
+      if (d.id === request.body.id) {
+        (d.username = request.body.username), (d.age = request.body.age);
+      }
+      return d;
+    });
+
+    fs.writeFile(
+      "./data/users.json",
+      JSON.stringify(changedData),
+      (writeError) => {
+        if (writeError) {
+          response.json({
+            status: "file write error",
+            data: [],
+          });
+        }
+        response.json({
+          status: "succes",
+          data: changedData,
+        });
+      }
+    );
+  });
 });
 
 app.delete("/users", (request, response) => {
@@ -80,7 +116,10 @@ app.delete("/users", (request, response) => {
     }
     const readObject = JSON.parse(readData);
     const filteredObject = readObject.filter((o) => o.id !== body.userId);
-    fs.writeFile("./data/users.json",JSON.stringify(filteredObject),(writeError) => {
+    fs.writeFile(
+      "./data/users.json",
+      JSON.stringify(filteredObject),
+      (writeError) => {
         if (writeError) {
           response.json({
             status: "write file error",
