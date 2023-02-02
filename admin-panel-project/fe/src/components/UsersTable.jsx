@@ -2,6 +2,7 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const columns = [
   { field: "id", headerName: "ID" },
@@ -14,7 +15,6 @@ const columns = [
   { field: "avatar", headerName: "Avatar", type: "text" },
   { field: "action", headerName: "Action" },
 ];
-
 const rows = [
   {
     id: 1,
@@ -27,12 +27,20 @@ const rows = [
   },
 ];
 
-export default function DataTable() {
+export default function UsersTable() {
+  const navigate = useNavigate();
+
+  const handleNewUser = () => {
+    navigate("/newproduct")
+  }
+
   return (
     <div style={{ height: 400, width: "100%" }}>
       <Typography>Users</Typography>
 
-      <Button variant="contained">New</Button>
+      <Button variant="contained" onClick={handleNewUser}>
+        New
+      </Button>
       <DataGrid
         rows={rows}
         columns={columns}
