@@ -8,20 +8,20 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-import { Checkbox, TextField } from "@mui/material";
+import Button from "@mui/material/Button";
+import { Checkbox, TextField, Typography } from "@mui/material";
 
 export default function NewProduct() {
   return (
     <div>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", p: 3 }}>
         <Side />
-        
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box>
           <Toolbar />
+          <FormLabel sx={{ fontSize: 30 }}>Add Users</FormLabel>
           <Box
-            component="form"
             sx={{
-              "& > :not(style)": { m: 1, width: "80ch" },
+              "& > :not(style)": { m: 1, width: "90%" },
             }}
             noValidate
             autoComplete="off"
@@ -40,8 +40,8 @@ export default function NewProduct() {
               variant="outlined"
             />
           </Box>
-          <FormControl>
-            <FormLabel id="demo-row-radio-buttons-group-label">Role</FormLabel>
+          <Box sx={{ marginTop: 2 }}>
+            <FormLabel id="role">Role</FormLabel>
             <RadioGroup
               row
               aria-labelledby="demo-row-radio-buttons-group-label"
@@ -54,8 +54,40 @@ export default function NewProduct() {
               />
               <FormControlLabel value="user" control={<Radio />} label="User" />
             </RadioGroup>
-          </FormControl>
-          <Checkbox defaultChecked />
+          </Box>
+          <Box sx={{ marginTop: 2 }}>
+            <FormControl>
+              <FormLabel id="disabled">Disabled</FormLabel>
+              <Checkbox defaultChecked />
+            </FormControl>
+          </Box>
+          <Box sx={{ marginTop: 2 }}>
+            <FormControl>
+              <FormLabel>Avatar</FormLabel>
+              <Button variant="contained" sx={{ marginTop: 2 }}>
+                UPLOAD AN IMAGE
+              </Button>
+            </FormControl>
+          </Box>
+          <Box sx={{ marginTop: 2, width: "90%" }}>
+            <TextField
+              id="password"
+              label="Password"
+              variant="outlined"
+              sx={{ width: "90%" }}
+            />
+          </Box>
+          <Box sx={{ marginTop: 3 }}>
+            <Button variant="contained" sx={{ marginRight: 3 }}>
+              SAVE
+            </Button>
+            <Button variant="contained" sx={{ marginRight: 3 }}>
+              RESET
+            </Button>
+            <Button variant="contained" sx={{ marginRight: 3 }}>
+              CANCEL
+            </Button>
+          </Box>
         </Box>
       </Box>
     </div>
