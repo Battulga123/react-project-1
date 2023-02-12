@@ -4,7 +4,7 @@ import Users from "./pages/Users";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import SideBar from "./components/SideBar";
-import NewProduct from "./pages/NewProduct";
+import NewUser from "./pages/NewUser";
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/newproduct" element={<NewProduct/>}></Route>
+        <Route path="/newuser" element={<NewUser/>}></Route>
+
       </Routes>
     </div>
   );
