@@ -57,7 +57,7 @@ export default function UsersTable() {
   const navigate = useNavigate();
 
   const handleNewUser = () => {
-    navigate("/newproduct");
+    navigate("/newuser");
   };
 
   return (

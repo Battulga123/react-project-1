@@ -11,7 +11,17 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import { Checkbox, TextField, Typography } from "@mui/material";
 
-export default function NewProduct() {
+export default function NewUser() {
+
+function handleSave (e) {
+  e.preventDefault()
+  console.log('clicked')
+
+}
+
+
+
+
   return (
     <div>
       <Box sx={{ display: "flex", p: 3 }}>
@@ -78,7 +88,7 @@ export default function NewProduct() {
             />
           </Box>
           <Box sx={{ marginTop: 3 }}>
-            <Button variant="contained" sx={{ marginRight: 3 }}>
+            <Button variant="contained" sx={{ marginRight: 3 }} onClick={handleSave}>
               SAVE
             </Button>
             <Button variant="contained" sx={{ marginRight: 3 }}>

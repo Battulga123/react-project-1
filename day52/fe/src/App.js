@@ -8,7 +8,7 @@ import { fetchAllData, deleteUser } from "./services/axiosUsersServices";
 // npm nodemon
 
 function App() {
-  const URL = "http://localhost:8080/users";
+  const URL = "http://localhost:8081/users";
   const newUser = {
     id: "",
     username: "",

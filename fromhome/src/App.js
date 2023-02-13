@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const promise = new Promise(function executor(resolve, reject) {
+    // Fulfill the promise with value '42' after 100 ms.
+    setTimeout(() => resolve(42), 100);
+  });
+
+  promise.then((value) => {
+    value;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>From Home</h1>
     </div>
   );
 }
