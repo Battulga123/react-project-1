@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
+  const URL = "http://localhost:8082/category";
 
   useEffect(() => {
     fetchCategories();
@@ -18,31 +18,32 @@ export default function Categories() {
 
   return (
     <div>
-      <h1>Category list</h1>
+      <h1>Category List</h1>
       <table>
         <thead>
           <tr>
             <td>Category ID</td>
-            <td>Category name</td>
+            <td>Category Name</td>
             <td>Edit</td>
             <td>Delete</td>
           </tr>
         </thead>
         <tbody>
-          {categories.map((category, index) => {
-            return (
-              <tr>
-                <td>{category.id}</td>
-                <td>{category.name}</td>
-                <td>
-                  <button>Edit</button>
-                </td>
-                <td>
-                  <button>Delete</button>
-                </td>
-              </tr>
-            );
-          })}
+          {categories &&
+            categories.map((category, index) => {
+              return (
+                <tr key={index}>
+                  <td>{category.id}</td>
+                  <td>{category.name}</td>
+                  <td>
+                    <button>Edit</button>
+                  </td>
+                  <td>
+                    <button>Delete</button>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
