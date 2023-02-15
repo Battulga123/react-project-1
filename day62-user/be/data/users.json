@@ -1,1 +1,10 @@
-[{"firstname":"","lastname":"","email":"","password":"","address":"","role":{"id":2,"name":"User"}},{"firstname":"1","lastname":"1","email":"1","password":"1","address":"1","role":{"id":2,"name":"User"}},{"firstname":"12","lastname":"12","email":"12","password":"12","address":"12","role":{"id":1,"name":"Admin"}}]
+[
+  {
+    "firstname": "battulga",
+    "lastname": "ishjamts",
+    "email": "tulgaa.bi@gmail.com",
+    "password": "$2b$10$yk.icaYORBoLHWFixRtEQuMmmxpVKK45.b3alJ07LgyX3KAt4Xwo.",
+    "address": "12345678",
+    "role": { "id": 1, "name": "Admin" }
+  }
+]
