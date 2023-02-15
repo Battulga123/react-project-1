@@ -5,7 +5,7 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import { Button } from "@mui/material";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -42,9 +42,9 @@ export default function UserRegisterForm() {
       firstname: e.target.firstname.value,
       lastname: e.target.lastname.value,
       email: e.target.email.value,
-      password: e.target.email.value,
+      password: e.target.password.value,
       address: e.target.address.value,
-      role: currentRole
+      role: currentRole,
     };
     console.log(data);
 
