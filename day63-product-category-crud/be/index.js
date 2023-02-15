@@ -1,11 +1,9 @@
-console.log("Day-63 category crud");
+console.log("Day-63 Category CRUD");
 
+/// import necessary packages
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-const { uuid } = require("uuidv4");
-const { request } = require("http");
-const { response } = require("express");
 
 const PORT = 8082;
 
@@ -17,32 +15,34 @@ app
   .route("/category")
   .post((request, response) => {
     const body = request.body;
-    const categoryData = fs.readFileSync("./data/category.json", {
+    console.log(body);
+    const categoryData = fs.readFileSync("./data/categories.json", {
       encoding: "utf-8",
       flag: "r",
     });
 
-    const categoryDataobj = JSON.parse(categoryData);
+    const categoryDataObj = JSON.parse(categoryData);
     const newCategory = {
       id: Date.now().toString(),
       name: body.catName,
     };
 
-    categoryDataobj.push(newCategory);
+    categoryDataObj.push(newCategory);
 
-    const writeCategoryData = fs.writerFileSync(
-      "./data/category.json",
-      JSON.stringify(categoryDataobj)
+    const writeCategoryData = fs.writeFileSync(
+      "./data/categories.json",
+      JSON.stringify(categoryDataObj)
     );
+    console.log(writeCategoryData);
     if (writeCategoryData) {
       response.json({
-        status: "File write error",
+        status: "File write Error",
         data: [],
       });
     } else {
       response.json({
         status: "success",
-        data: categoryDataobj,
+        data: categoryDataObj,
       });
     }
   })
