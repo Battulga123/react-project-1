@@ -2,10 +2,8 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import FormLabel from "@mui/material/FormLabel";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import { useNavigate } from "react-router-dom";
-import TableContainer from '@mui/material/TableContainer';
+import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 
 const columns = [
@@ -71,7 +69,7 @@ export default function UsersTable() {
         >
           New
         </Button>
-        <Table style={{ height: 600}}>
+        <Table style={{ height: 600 }}>
           <DataGrid
             rows={rows}
             columns={columns}

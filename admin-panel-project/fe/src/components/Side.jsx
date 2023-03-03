@@ -50,7 +50,8 @@ export default function Side() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
             },
-          }}>
+          }}
+        >
           <Toolbar />
           <Box sx={{ overflow: "auto" }}>
             <List>
@@ -72,11 +73,8 @@ export default function Side() {
                 </ListItemButton>
               </ListItem>
             </List>
-          </Box> 
+          </Box>
         </Drawer>
-        
-
-
       </Box>
     </div>
   );
