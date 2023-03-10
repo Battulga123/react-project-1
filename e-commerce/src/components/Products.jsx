@@ -70,7 +70,6 @@ function Products(props) {
           orderQty: 1,
           selectedColor: props.color[0],
           selectedSize: props.size[0],
-
         },
       ]);
     }
@@ -186,8 +185,8 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
             }}
           >
             <div className="title">
-              {props.title} <br /> Product Code: <span className="space-3px"></span> {props.id}
-
+              {props.title} <br /> Product Code:{" "}
+              <span className="space-3px"></span> {props.id}
             </div>
           </Link>
 
@@ -205,11 +204,7 @@ inWishlist function дуудаж өгөгдсөн ID-тай бүтээгдэхү
               size={15}
             />
           </div>
-
-
-
         </div>
-
       </div>
 
       {inBasket(props.id) ? (
